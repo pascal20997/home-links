@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <script language="javascript" src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container-md">
+    <h1>
+      <%= title %>
+    </h1>
+    <p>Welcome to <%= title %>
+    </p>
+
+    <h2>Links</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <% links.forEach((link)=> { %>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= link.label %>
+              </h5>
+              <p class="card-text">
+                <%= link.description %>
+                  <p>
+                    <a href="<%= link.link %>" class="btn btn-outline-light">Open</a>
+                  </p>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+    </div>
+
+  </div>
+</body>
+
+</html>
